@@ -1,33 +1,36 @@
 import React from "react";
-import Unicorn from "../assets/img/unicorn.png";
-import { View, Text, Image, StyleSheet } from "react-native";
+import { View, Text, Image, StyleSheet, Button } from "react-native";
 
 export default function Item(props) {
   return (
     <View style={styles.item} accessibilityRole="link">
-      <Image style={styles.imageIcon} source={Unicorn} />
-      <Text style={styles.item__title}>{props.title}</Text>
+      <View style={{ flex: 1, flexDirection: 'row', height: 50, width: '100%' }}>
+        <Image style={styles.imageIcon} source={props.src} />
+        <Text style={styles.item__title}>{props.title}</Text>
+      </View>
+      <Button title='Click me..!!' />
     </View>
   );
 }
 const styles = StyleSheet.create({
   item: {
     width: "100%",
-    height: 100,
-    justifyContent: "flex-start",
-    alignItems: "center",
+    height: 150,
+    justifyContent: 'center',
+    alignItems: 'flex-start',
     backgroundColor: "#ccc",
-    margin: 5,
-    flexDirection: "row",
+    marginBottom: 10,
+    flexDirection: "column",
     borderRadius: 10,
   },
   imageIcon: {
-    marginLeft: 10,
-    marginRight: 10,
+    marginLeft: 20,
+    marginRight: 20,
     width: 60,
     height: 60,
   },
   item__title: {
+    height: 50,
     color: "#f2a400",
     fontSize: 20,
     fontWeight: "bold",
